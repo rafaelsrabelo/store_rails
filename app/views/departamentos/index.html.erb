@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h3 class="lead">Categorias</h3>
+
+<table class="table table-light table-hover">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @departamentos.each do |departamento| %>
+      <tr>
+        <td><%= departamento.nome %></td>
+        <td><%= link_to 'Ver os produtos', departamento, class:"btn btn-default" %></td>
+        <td><%= link_to 'Editar', edit_departamento_path(departamento), class:"btn btn-default" %></td>
+        <td><%= button_to 'Apagar', departamento, method: :delete, data: { confirm: 'Tem certeza?' }, class:"btn btn-danger" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nova Categoria', new_departamento_path, class:"btn btn-primary" %>

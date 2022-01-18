@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dindin da Léia</title>
+    <%= csrf_meta_tags %>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+      <%= nav_bar brand: "@dindin.daleia", responsive: true, brand_link: root_url do %>
+        <%= menu_group do %>
+          <%= menu_item "Novo produto", new_produto_path %>
+          <%= menu_item "Nova categoria", departamentos_path %>
+        <% end %>
+        <%= form_tag busca_produto_path, method: :get, class:"navbar-form navbar-right" do %>
+          <div class="form-group">
+            <%= text_field_tag :nome, @nome , class:"form-control" %>
+            <%= button_to "Buscar...", nil, class:"btn btn-default" %>
+            <%= link_to 'Sair', destroy_admin_session_path, method: :delete, class:"" %>
+          </div>
+        <% end %>  
+      <% end %>
+    <div class="container">
+      <%= yield %>
+    </div>
+  </body>
+</html>

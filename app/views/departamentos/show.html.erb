@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<table class="table table-light table-hover">
+  <thead>
+    <tr>
+      <td scope="col"><strong>Sabor</strong></td>
+      <td scope="col"><strong>Descrição</strong></td>
+      <td scope="col"><strong>Categoria</strong></td>
+      <td scope="col"><strong>Quantidade</strong></td>
+      <td scope="col"><strong>Preço</strong></td>
+    </tr>
+  </thead>
+    <tbody>
+      <%= render @produtos_por_departamento %>
+    </tbody>
+</table>
+<%= link_to 'Voltar', departamentos_path, class:"btn btn-default" %>

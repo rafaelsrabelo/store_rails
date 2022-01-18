@@ -1,0 +1,39 @@
+<% if flash[:notice] %>
+  <div class="alert alert-success" role="alert">
+    <%= flash[:notice] %>
+  </div>
+<% end %>
+
+  <div>
+    <h3 class="lead">Produtos</h3>
+    <table class="table table-light table-hover">
+      <thead>
+        <tr>
+          <td scope="col"><strong>Sabor</strong></td>
+          <td scope="col"><strong>Descrição</strong></td>
+          <td scope="col"><strong>Categoria</strong></td>
+          <td scope="col"><strong>Quantidade</strong></td>
+          <td scope="col"><strong>Preço</strong></td>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render @produtos %>
+      </tbody>
+    </table>
+    <hr>
+      <h3 class="lead">Promoção do dia</h3>
+      <table class="table table-light table-hover">
+      <thead>
+        <tr>
+          <td scope="col"><strong>Sabor</strong></td>
+          <td scope="col"><strong>Descrição</strong></td>
+          <td scope="col"><strong>Categoria</strong></td>
+          <td scope="col"><strong>Quantidade</strong></td>
+          <td scope="col"><strong>Preço</strong></td>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render @produto_do_dia %>
+      </tbody>
+    </table>
+  </div>
