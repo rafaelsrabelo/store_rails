@@ -154,3 +154,59 @@ body {
 label {
   display: block;
 }
+
+.header-container{
+  background-color: #f05458;
+  padding: 0.5% 1% 0.5% 1%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 3px solid #1b79c3;
+
+  .header-left-content{
+    display: flex;
+    align-items: center;
+    list-style: none;
+
+    .options-container{
+      margin-left: 20px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      font-weight: bold;
+      font-size: 18px;
+
+      .option{
+        color: white;
+      }
+    }
+  }
+
+  .header-right-content{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    
+    .search-container{
+      display: flex;
+      align-items: center; 
+      gap: 10px;
+
+      .form-search{
+        display: flex;
+        margin-right: 50px;
+      }
+      
+      input{
+        outline: none;
+        border-radius: 8px;
+        border: 1px solid #eeeeee;
+        padding: 1%;
+        margin-right: 5px;
+        font-size: 14px;
+      }
+    }
+  }
+
+}
+

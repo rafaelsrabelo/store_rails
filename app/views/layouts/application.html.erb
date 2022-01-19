@@ -7,23 +7,37 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-      <%= nav_bar brand: "@dindin.daleia", responsive: true, brand_link: root_url do %>
-        <%= menu_group do %>
-          <%= menu_item "Novo produto", new_produto_path %>
-          <%= menu_item "Nova categoria", departamentos_path %>
+
+    <header class="header-container">
+      <div class="header-left-content">
+        <%= link_to root_url do %>
+          <%= image_tag("dindin.png", { style: "height:60px;width:60px;"}) %>
         <% end %>
-        <%= form_tag busca_produto_path, method: :get, class:"navbar-form navbar-right" do %>
-          <div class="form-group">
-            <%= text_field_tag :nome, @nome , class:"form-control" %>
-            <%= button_to "Buscar...", nil, class:"btn btn-default" %>
-            <%= link_to 'Sair', destroy_admin_session_path, method: :delete, class:"" %>
-          </div>
-        <% end %>  
-      <% end %>
+        
+        <div class="options-container">
+            <%= menu_item "Novo produto", new_produto_path, class:"option" %>
+            <%= menu_item "Nova categoria", departamentos_path, class:"option" %>
+        </div>
+      </div>
+      <div class="header-right-content">
+        <div class="search-container">
+          <%= form_tag busca_produto_path, method: :get, class:"form-search" do %>
+            <%= text_field_tag :nome, @nome , class:"", placeholder:"Digite..." %>
+            <%= image_tag("search_white_24dp.svg", { style: "height:30px;width:30px;cursor:pointer"}) %>
+          <% end %>  
+        </div>
+        <div class="logout">
+          <%= link_to destroy_admin_session_path, method: :delete do %>
+            <%= image_tag("logout_white.svg", { style: "height:30px;width:30px;cursor:pointer"}) %>
+          <% end %>
+        </div>
+      </div>
+    </header>
     <div class="container">
       <%= yield %>
     </div>
