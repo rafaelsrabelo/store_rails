@@ -6,30 +6,119 @@ body {
   line-height: 18px;
 }
 
-.login {
-  background: #428bca;
-  min-height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
+.login-container {
   display: flex;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
-  padding-top: 1.2rem;
+  background-color: #f05458;
+  height: 100vh;
+
 }
 
 .content {
-  background: #fff;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  padding: 50px;
+  width: 600px;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  background-color: white;
+  box-shadow: 0px 3px 6px #00000029;
+  border-radius: 15px;
+
+  .login-title{
+    // padding-top: 10px;
+    font-size: 40px;
+    font-weight: bolder;
+    text-align: center;
+    color: #1b79c3;
+  }
+
+  .formulary{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 5%;
+
+    .logo{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+  }
+
+  .inputs{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+  }
+
+  .input-group{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    input{
+      width: 100%;
+      outline: none;
+      height: 3.5rem;
+      border-radius: 10px;
+      border: 1px solid #eeeeee;
+      box-shadow: 0px 3px 6px #00000029;
+      font-size: 14px;
+      padding: 1%;
+    }
+  }
+
+  .remember-check{
+    margin-top: 10px;
+   display: flex;
+   align-items: center;
+   padding: 1%;
+   gap: 10px;
+
+   input{
+     cursor: pointer;
+   }
+
+   span{
+     font-size: 16px;
+     margin-top: 5px;
+     font-weight: bold;
+   }
+  }
+
+  .actions{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    #btn-confirm{
+      margin-top: 3rem;
+      width: 100%;
+      height: 4rem;
+      font-size: 18px;
+      font-weight: bold;
+      background-color: #1b79c3;
+      transition: filter 0.2ms;
+
+      &:hover{
+        filter: brightness(90%)
+      }
+    }
+  }
+
 }
 
 #notice {
   color: green;
 }
+
 
 .field_with_errors {
   padding: 2px;
