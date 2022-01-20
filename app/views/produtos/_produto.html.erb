@@ -1,13 +1,15 @@
   <tr>
     <td scope="col"><%= produto.nome %></td>
-    <td scope="col"><%= produto.descricao %></td>
     <td scope="col"><%= produto.departamento.nome %></td>
     <td scope="col"><%= produto.quantidade %></td>
     <td scope="col"><%= produto.preco %></td>
-    <td><%= link_to "Alterar", edit_produto_path(produto), class:"btn btn-default" %></td>
     <td>
-        <%= button_to "Remover", "/produtos/#{produto.id}" , method: :delete, class:"btn btn-danger",
-          data: {confirm: "Tem certeza que deseja remover este produto?"}
-        %>
+      <%= link_to edit_produto_path(produto) do %>
+        <%= image_tag("edit.svg", { style: "height:20px;width:20px;"}) %>
+      <% end %>
+    </td>
+    <td>
+      <%= link_to image_tag("delete.svg", { style: "height:20px;width:20px;"}), "/produtos/#{produto.id}" , method: :delete,
+      data: {confirm: "Tem certeza que deseja remover este produto?"}%>
     </td>
   </tr>
